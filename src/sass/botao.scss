@@ -1,9 +1,19 @@
-.botao{
+@mixin botao{
     display: inline-block;
     border-radius: 15px;
-    background: blanchedalmond;
     padding: 15px;
     border: none;
-    color: white;
     font-size: 1.5em;
+}
+
+.botao{
+    @include botao;
+    background: greenyellow;
+    color: white;
+}
+
+.botao-danger{
+    @include botao;
+    background: #2d8285;
+    color: white;    
 }
