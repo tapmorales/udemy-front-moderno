@@ -1,7 +1,98 @@
 .header-animado{
-
     $h: 300px;
+    $largura_cenario: 2400px;
 
-    height: $h;
+    // height: $h;
     background-color: $main-color;
+    padding-top: 90px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    
+
+    .header-animado__title{
+        color: #00151a;
+        font-size: 38px;
+        font-weight: bold;
+    }
+
+    .header-animado__subtitle{
+        color: white;
+        font-size: 34px;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+
+    &__ilustra{
+        background-image: url(../../src/img/cenario_all_960.png);
+        height: $h/2;
+        background-size: auto 100%;
+        background-position: 50% top;
+
+        &>div{
+            display: none;
+        }
+
+        @media screen and (min-width: 480px){
+            background-image: url(../../src/img/cenario_all_1530.png);
+            
+        }
+
+        @media screen and (min-width: 960px){
+            background-image: url(../../src/img/cenario_bg.png);
+            height: $h;
+            position: relative;
+
+            &>div{
+                display: block;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                width: $largura_cenario * 2;
+            }
+
+            @mixin anima($imagem, $tipo_anima: '30s linear infinite'){
+                background-image: url(../../src/img/#{$imagem});
+                animation: anima_cenario #{$tipo_anima};
+
+            }
+
+            @keyframes anima_cenario{
+                from{
+                    transform: translateX(-50%)
+                    translateZ(0);
+                }
+
+                to{
+                    transform: translateX(0)
+                    translateZ(0);
+                }
+            }
+
+            $itens:(
+                nuvens: '90s linear infinite reverse',
+                casas: null,
+                rua: null,
+                carrosCima: '10s linear infinite reverse',
+                carrosBaixo: '12s linear infinite'
+            );
+
+            @each $key, $valor in $items{
+
+                @if $valor{
+                    .#{$key}{
+                        @include anima('cenatio_#{$key}.png', #{$valor});
+                    }
+                } @else {
+                    .#{$key}{
+                        @include anima('cenatio_#{$key}.png');
+                    }
+                }
+
+            }
+        }
+        
+    }
 }
