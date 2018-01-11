@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,116 +9,67 @@
     <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+
+    
 </head>
 <body>
-     <nav class="mainNavigation">
-         <div class="container">
-             <a href="index.html" class="mainNavigation__logo">Logo</a>
-             <button class="mainNavigation__hamburguer" type="button">
-                 <div class="mainNavigation__hamburguerParties">Menu</div>
-            </button>
-            <ul class="mainNavigation__menu--opened">
-                <li><a href="#">Portfólio</a></li>
-                <li><a href="#">Sobre Mim</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-
-             
-        </div>
-     </nav>
+    @@include('./inc/nav.html')
+     
 
      <div class="jumbotron header-animado">
-         Imagem animada
          <div class="container">
-             <p>Olá, tudo bem!</p>
-             <p>Eu sou Silvia Silveira, webdesigner, front-ender e apreciador de café</p>
+             <p class="header-animado__title" >Olá, tudo bem!</p>
+             <h1 class="header-animado__subtitle" >Eu sou Silvia Silveira, webdesigner, front-ender e apreciadora de café</h1>
+         </div>
+
+         <div class="header-animado__ilustra">
+             <div class="nuvens"></div>
+             <div class="casas"></div>
+             <div class="rua"></div>
+             <div class="carrosCima"></div>
+             <div class="carrosBaixo"></div>
          </div>
      </div>
 
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1>Últimos Trabalhos</h1>
+                <h2>Últimos Trabalhos</h2>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="" alt="">
-                    <div class="caption">
-                        <h3>Titulo do Trabalho</h3>
-                        <p>Lorem Ipsum</p>
-                        <p><a href="#" class="btn btn-primary pull-right" role="button">Ver mais</a></p>
+                <div class="thumbnail card-portifolio">
+                    <h3 class="card-portifolio__title">Titulo do Trabalho</h3>
+                    <div class="card-portifolio__imagem">
+                        <img src="img/portfolio/01.jpg" alt="Imagem Portifolio">
                     </div>
+                    <div class="caption card-portifolio__caption">
+                        <p class="card-portifolio__text">Lorem Ipsum</p>
+                    </div>
+                    <a href="#" class="card-portifolio__btn btn btn-primary" role="button">Ver mais</a>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="" alt="">
-                    <div class="caption">
-                        <h3>Titulo do Trabalho</h3>
-                        <p>Lorem Ipsum</p>
-                        <p><a href="#" class="btn btn-primary pull-right" role="button">Ver mais</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="" alt="">
-                    <div class="caption">
-                        <h3>Titulo do Trabalho</h3>
-                        <p>Lorem Ipsum</p>
-                        <p><a href="#" class="btn btn-primary pull-right" role="button">Ver mais</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="" alt="">
-                    <div class="caption">
-                        <h3>Titulo do Trabalho</h3>
-                        <p>Lorem Ipsum</p>
-                        <p><a href="#" class="btn btn-primary pull-right" role="button">Ver mais</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="" alt="">
-                    <div class="caption">
-                        <h3>Titulo do Trabalho</h3>
-                        <p>Lorem Ipsum</p>
-                        <p><a href="#" class="btn btn-primary pull-right" role="button">Ver mais</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="" alt="">
-                    <div class="caption">
-                        <h3>Titulo do Trabalho</h3>
-                        <p>Lorem Ipsum</p>
-                        <p><a href="#" class="btn btn-primary pull-right" role="button">Ver mais</a></p>
-                    </div>
-                </div>
-            </div>
+            
         </div><!-- Fim row -->
         <hr>
 
-        <footer>
-            <div class="container">
-                <p class="text-muted text-right">Social:</p>
-                <ul class="list-inline pull-right">
-                    <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw"></i></a></li>
-                    <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw"></i></a></li>
-                    <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw"></i></a></li>
-                    <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw"></i></a></li>
-                    <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw"></i></a></li>
-                </ul>
-            </div>
-        </footer>
     </div><!-- Fim container -->
 
+    <footer class="rodape">
+        <div class="container">
+            <p class="text-right">Social:</p>
+            <ul class="rodape__lista list-inline pull-right">
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a></li>
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a></li>
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a></li>
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a></li>
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a></li>
+            </ul>
+        </div>
+    </footer> <!-- Footer -->
 
 
 
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 </html>

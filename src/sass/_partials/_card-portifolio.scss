@@ -1,0 +1,79 @@
+.card-portifolio{
+
+    @mixin sombra($dir, $angulo, $distancia){
+        content: '';
+        z-index: -1;
+        position: absolute;
+        background: #777;
+        height: 20px;
+        width: 50%;
+        bottom: 15px;
+        box-shadow: 0 15px 10px #777;
+
+        @if $dir == 'esquerda'{
+            transform: rotate($angulo * -1);
+            left: $distancia;
+        } @else {
+            transform: rotate($angulo);
+            right: $distancia;
+        }
+
+
+        
+    }
+
+    &:before{
+        @include sombra('esquerda',6deg, 5px);
+    }
+
+    &:after{
+        @include sombra('direita', 6deg ,5px );
+    }
+
+    padding: 0;
+    border-radius:0;
+    border: 1px solid transparent;
+    position: relative;
+    
+    &__imagem{
+        height: 230px;
+        overflow: hidden;
+
+        img{
+            max-width: 100%;
+            opacity: .7;
+            transition: all .3s ease;
+        }
+
+    }
+
+    &:hover{
+        img{
+            opacity: 1;
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .card-portifolio__btn{
+            background: $main-color;
+            color: white;
+
+            &:hover{
+                background: lighten($main-color, 20);
+            }
+        }
+    }
+
+    &__btn{
+        background: transparent;
+        color: $main-color;
+        display: block;
+        border-radius: 0;
+        border: none;
+        width: 100px;
+        transition: all .3s linear;
+        margin-left: auto;
+        position: relative;
+        top: 1px;
+
+    }
+}
