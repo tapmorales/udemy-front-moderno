@@ -24,22 +24,23 @@
     }
 
     &__ilustra{
-        background-image: url(../../src/img/cenario_all_960.png);
+        background-image: url(../img/cenario_all_960.png);
         height: $h/2;
         background-size: auto 100%;
         background-position: 50% top;
+        overflow: hidden;
 
         &>div{
             display: none;
         }
 
         @media screen and (min-width: 480px){
-            background-image: url(../../src/img/cenario_all_1530.png);
+            background-image: url(../img/cenario_all_1530.png);
             
         }
 
         @media screen and (min-width: 960px){
-            background-image: url(../../src/img/cenario_bg.png);
+            background-image: url(../img/cenario_bg.png);
             height: $h;
             position: relative;
 
@@ -54,7 +55,7 @@
             }
 
             @mixin anima($imagem, $tipo_anima: '30s linear infinite'){
-                background-image: url(../../src/img/#{$imagem});
+                background-image: url(../img/#{$imagem});
                 animation: anima_cenario #{$tipo_anima};
 
             }
@@ -79,15 +80,15 @@
                 carrosBaixo: '12s linear infinite'
             );
 
-            @each $key, $valor in $items{
+            @each $key, $valor in $itens{
 
                 @if $valor{
                     .#{$key}{
-                        @include anima('cenatio_#{$key}.png', #{$valor});
+                        @include anima('cenario_#{$key}.png', #{$valor});
                     }
                 } @else {
                     .#{$key}{
-                        @include anima('cenatio_#{$key}.png');
+                        @include anima('cenario_#{$key}.png');
                     }
                 }
 
